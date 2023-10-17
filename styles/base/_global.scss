@@ -1,0 +1,43 @@
+.terminal-body {
+  &,
+  * {
+    color: var(--body-text-color);
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  %heading {
+    font-family: 'Young Serif', serif;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    @extend %heading;
+  }
+
+  h2 {
+    font-size: 2rem;
+    @extend %heading;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    @extend %heading;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    @extend %heading;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    @extend %heading;
+  }
+
+  h6 {
+    font-size: 1rem;
+    @extend %heading;
+  }
+}
