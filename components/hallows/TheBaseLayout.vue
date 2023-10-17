@@ -12,6 +12,7 @@
 .base-main-layout {
   min-height: 100vh;
   width: 100vw;
-  background-color: red;
+  background-color: var(--secondary-color);
+  padding-top: 20vh;
 }
 </style>
