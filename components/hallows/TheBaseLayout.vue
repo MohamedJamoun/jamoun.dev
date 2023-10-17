@@ -3,11 +3,15 @@
 </script>
 
 <template>
-  <div style="padding: 3rem; background:green">
+  <div class="base-main-layout">
     <slot />
   </div>
 </template>
 
 <style scoped>
-
+.base-main-layout {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: red;
+}
 </style>

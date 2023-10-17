@@ -4,9 +4,9 @@
 
 <template>
   <the-base-layout>
-    <div style="background-color: red;">
+    <base-terminal-mockup-container>
       <slot />
-    </div>
+    </base-terminal-mockup-container>
   </the-base-layout>
 </template>
 
