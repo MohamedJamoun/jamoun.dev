@@ -1,5 +1,26 @@
 <script setup lang="ts">
-
+const navItems = [
+  {
+    name: 'Home',
+    path: '/',
+  },
+  {
+    name: 'About',
+    path: '/about',
+  },
+  {
+    name: 'Projects',
+    path: '/projects',
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
+  },
+  {
+    name: 'Test',
+    path: '/test',
+  },
+]
 </script>
 
 <template>
@@ -12,7 +33,10 @@
       </div>
     </div>
     <nav class="navbar">
-      ..
+      <NuxtLink v-for="item in navItems" :key="item.name" :to="item.path">
+        {{ item.name }}
+      </NuxtLink>
+      <div class="missed" />
     </nav>
     <main class="terminal-body">
       <slot />
@@ -45,10 +69,9 @@
   .top-bar {
     width: 100%;
     height: 30px;
-    background-color: rgba(black, 0.8);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom: 1px solid var(--dark-grey);
+    background-color: rgba(white, 0.025);
 
     .top-bar-buttons {
       display: flex;
@@ -76,10 +99,54 @@
       }
     }
   }
+
+  nav.navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(black, 0.45);
+
+    a {
+      font-size: 14px;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      font-family: 'Gabarito', sans-serif;
+      letter-spacing: 1px;
+      border-left: 1px solid var(--dark-grey-2);
+
+      &:nth-child(1) {
+        padding-left: 25px;
+        border-left: none;
+      }
+
+      &:hover, &.router-link-active {
+        border-bottom-color: var(--dark-grey);
+        background-color: var(--dark-grey);
+
+        &:last-of-type {
+          border-right: 1px solid var(--dark-grey-2);
+        }
+      }
+    }
+
+    a,
+    .missed {
+      height: 40px;
+      border-bottom: 1px solid rgba(white, 0.08);
+      border-top: 1px solid var(--dark-grey-2);
+    }
+
+    .missed {
+      width: 100%;
+    }
+  }
 }
 
 .terminal-body {
-  padding: 20px;
+  padding: 25px;
 }
 </style>
 
