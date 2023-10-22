@@ -5,7 +5,8 @@
 <template>
   <the-base-layout>
     <base-terminal-mockup-container>
-      <slot />
+      <!-- <slot /> -->
+      <ContentDoc />
     </base-terminal-mockup-container>
   </the-base-layout>
 </template>
