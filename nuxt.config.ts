@@ -24,4 +24,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: [
+    '@nuxthq/studio',
+  ],
 })
