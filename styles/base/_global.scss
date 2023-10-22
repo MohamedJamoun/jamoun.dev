@@ -1,5 +1,4 @@
 .terminal-body {
-
   &,
   * {
     color: var(--body-text-color);
@@ -13,18 +12,46 @@
   h4,
   h5,
   h6 {
-    color: var(--primary-color);
-    margin: 13px 0;
-    font-family: var(--secondary-font-family);
-    letter-spacing: 0.85px;
+    &, * {
+      margin: 13px 0 8px;
+      font-weight: 400;
+      font-size: inherit;
+    }
   }
 
   h1 {
-    font-size: 30px !important;
+      // color: var(--primary-color);
+      font-size: 25px;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5 {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-size: 12px;
   }
 
   p {
-    margin-left: 11px;
-    opacity: 0.7;
+    margin-bottom: 10px;
+    opacity: 0.6;
+
+    &.note {
+      padding-left: 11px;
+      border-left: var(--primary-border);
+      border-left-width: 3px;
+    }
   }
 }

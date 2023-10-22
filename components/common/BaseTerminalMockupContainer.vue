@@ -48,7 +48,7 @@ const navItems = [
 .terminal-mockup-container {
   width: 100%;
   margin: auto;
-  background-color: var(--primary-grey);
+  background-color: var(--primary-gray);
   box-shadow: var(--primary-shadow);
   border-radius: 12px;
   border: var(--primary-border);
@@ -59,19 +59,19 @@ const navItems = [
   }
 
   @screen lg {
-    max-width: 1000px;
+    max-width: 800px;
   }
 
-  @screen xl {
-    max-width: 1200px;
-  }
+  // @screen xl {
+  //   max-width: 1200px;
+  // }
 
   .top-bar {
     width: 100%;
     height: 30px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: var(--primary-grey);
+    background-color: var(--primary-gray);
 
     .top-bar-buttons {
       display: flex;
@@ -124,8 +124,8 @@ const navItems = [
       }
 
       &:hover, &.router-link-active {
-        border-bottom-color: var(--primary-grey);
-        background-color: var(--primary-grey);
+        border-bottom-color: var(--primary-gray);
+        background-color: var(--primary-gray);
 
         &:last-of-type {
           border-right: var(--primary-border);
