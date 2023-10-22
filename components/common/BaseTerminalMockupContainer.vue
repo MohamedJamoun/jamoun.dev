@@ -48,10 +48,10 @@ const navItems = [
 .terminal-mockup-container {
   width: 100%;
   margin: auto;
-  background-color: var(--dark-grey);
-  box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56);
+  background-color: var(--primary-grey);
+  box-shadow: var(--primary-shadow);
   border-radius: 12px;
-  border: 1px solid rgba(white, 0.25);
+  border: var(--primary-border);
   overflow: hidden;
 
   @screen md {
@@ -71,7 +71,7 @@ const navItems = [
     height: 30px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: rgba(white, 0.025);
+    background-color: var(--primary-grey);
 
     .top-bar-buttons {
       display: flex;
@@ -103,19 +103,20 @@ const navItems = [
   nav.navbar {
     display: flex;
     align-items: center;
-    background-color: rgba(black, 0.45);
+    background-color: var(--nav-bg-color);
+    height: 35px;
+    font-size: 14px;
+    letter-spacing: 0.85px;
 
     a {
-      font-size: 14px;
       text-decoration: none;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 0 20px;
-      font-family: 'Gabarito', sans-serif;
-      letter-spacing: 1px;
-      border-left: 1px solid var(--dark-grey-2);
+      font-family: 'Montserrat', sans-serif;
+      border-left: var(--primary-border);
 
       &:nth-child(1) {
         padding-left: 25px;
@@ -123,20 +124,20 @@ const navItems = [
       }
 
       &:hover, &.router-link-active {
-        border-bottom-color: var(--dark-grey);
-        background-color: var(--dark-grey);
+        border-bottom-color: var(--primary-grey);
+        background-color: var(--primary-grey);
 
         &:last-of-type {
-          border-right: 1px solid var(--dark-grey-2);
+          border-right: var(--primary-border);
         }
       }
     }
 
     a,
     .missed {
-      height: 40px;
+      height: 100%;
       border-bottom: 1px solid rgba(white, 0.08);
-      border-top: 1px solid var(--dark-grey-2);
+      border-top: var(--primary-border);
     }
 
     .missed {
