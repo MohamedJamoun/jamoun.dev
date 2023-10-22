@@ -1,0 +1,30 @@
+.terminal-body {
+
+  &,
+  * {
+    color: var(--body-text-color);
+    font-size: 14px;
+    font-family: var(--primary-font-family);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--primary-color);
+    margin: 13px 0;
+    font-family: var(--secondary-font-family);
+    letter-spacing: 0.85px;
+  }
+
+  h1 {
+    font-size: 30px !important;
+  }
+
+  p {
+    margin-left: 11px;
+    opacity: 0.7;
+  }
+}
