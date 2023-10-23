@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <ContentDoc />
+    Contacts Us
   </div>
 </template>
 
