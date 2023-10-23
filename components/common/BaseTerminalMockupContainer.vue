@@ -21,10 +21,60 @@ const navItems = [
     path: '/test',
   },
 ]
+
+const left = ref(0)
+const top = ref(0)
+const dragging = ref(false)
+const startX = ref(0)
+const startY = ref(0)
+
+function startDragging(event: MouseEvent) {
+  dragging.value = true
+  startX.value = event.clientX - left.value
+  startY.value = event.clientY - top.value
+}
+
+function drag(event: MouseEvent) {
+  if (!dragging.value)
+    return
+
+
+  left.value = event.clientX - startX.value
+  top.value = event.clientY - startY.value
+}
+
+function stopDragging() {
+  dragging.value = false
+}
+
+function centerTheTerminal() {
+  const terminal = document.getElementById('terminal')
+
+  if (terminal) {
+    const terminalWidth = terminal.offsetWidth
+    const terminalHeight = terminal.offsetHeight
+
+    left.value = (window.innerWidth - terminalWidth) / 2
+    top.value = (window.innerHeight - terminalHeight) / 2
+    terminal.style.opacity = '1'
+    terminal.style.transform = 'none'
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('mousemove', drag)
+  window.addEventListener('mouseup', stopDragging)
+
+  centerTheTerminal()
+  window.addEventListener('resize', centerTheTerminal)
+})
 </script>
 
 <template>
-  <div class="terminal-mockup-container">
+  <div
+    id="terminal" class="terminal-mockup-container" :style="{ left: `${left}px`, top: `${top}px` }"
+    @mousedown="startDragging"
+  >
     <div class="top-bar">
       <div class="top-bar-buttons">
         <div class="top-bar-button top-bar-button-red" />
@@ -53,6 +103,12 @@ const navItems = [
   border-radius: 12px;
   border: var(--primary-border);
   overflow: hidden;
+  position: fixed;
+  z-index: 999999;
+  opacity: 0;
+  transition: 0.2s cubic-bezier(.22, .68, 0, 1);
+  transition-property: opacity, transform;
+  transform: translateY(20px) scale(0.97);
 
   @screen md {
     max-width: 90%;
@@ -123,7 +179,8 @@ const navItems = [
         border-left: none;
       }
 
-      &:hover, &.router-link-active {
+      &:hover,
+      &.router-link-active {
         border-bottom-color: var(--primary-gray);
         background-color: var(--primary-gray);
 
