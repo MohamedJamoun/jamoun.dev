@@ -27,17 +27,23 @@ const top = ref(0)
 const dragging = ref(false)
 const startX = ref(0)
 const startY = ref(0)
+const MOBILE_SCREEN_WIDTH = 765
 
 function startDragging(event: MouseEvent) {
+  if (window.innerWidth < MOBILE_SCREEN_WIDTH)
+    return
+
   dragging.value = true
   startX.value = event.clientX - left.value
   startY.value = event.clientY - top.value
 }
 
 function drag(event: MouseEvent) {
-  if (!dragging.value)
+  if (window.innerWidth < MOBILE_SCREEN_WIDTH)
     return
 
+  if (!dragging.value)
+    return
 
   left.value = event.clientX - startX.value
   top.value = event.clientY - startY.value
@@ -62,6 +68,9 @@ function centerTheTerminal() {
 }
 
 onMounted(() => {
+  if (window.innerWidth < MOBILE_SCREEN_WIDTH)
+    return
+
   window.addEventListener('mousemove', drag)
   window.addEventListener('mouseup', stopDragging)
 
@@ -71,11 +80,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    id="terminal" class="terminal-mockup-container" :style="{ left: `${left}px`, top: `${top}px` }"
-    @mousedown="startDragging"
-  >
-    <div class="top-bar">
+  <div id="terminal" class="terminal-mockup-container" :style="{ left: `${left}px`, top: `${top}px` }">
+    <div class="top-bar" @mousedown="startDragging">
       <div class="top-bar-buttons">
         <div class="top-bar-button top-bar-button-red" />
         <div class="top-bar-button top-bar-button-yellow" />
@@ -99,28 +105,23 @@ onMounted(() => {
   width: 100%;
   margin: auto;
   background-color: var(--primary-gray);
-  box-shadow: var(--primary-shadow);
-  border-radius: 12px;
-  border: var(--primary-border);
   overflow: hidden;
-  position: fixed;
-  z-index: 999999;
   opacity: 0;
-  transition: 0.2s cubic-bezier(.22, .68, 0, 1);
-  transition-property: opacity, transform;
-  transform: translateY(20px) scale(0.97);
+  transition: transform 0.2s cubic-bezier(.22, .68, 0, 1), opacity 0.1s ease-in-out;
 
   @screen md {
     max-width: 90%;
+    box-shadow: var(--primary-shadow);
+    border-radius: 12px;
+    border: var(--primary-border);
+    position: fixed;
+    z-index: 999999;
+    transform: translateY(30px);
   }
 
   @screen lg {
     max-width: 800px;
   }
-
-  // @screen xl {
-  //   max-width: 1200px;
-  // }
 
   .top-bar {
     width: 100%;
@@ -128,6 +129,11 @@ onMounted(() => {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: var(--primary-gray);
+    display: none;
+
+    @screen md {
+      display: block;
+    }
 
     .top-bar-buttons {
       display: flex;
@@ -157,12 +163,17 @@ onMounted(() => {
   }
 
   nav.navbar {
-    display: flex;
+    display: none;
     align-items: center;
     background-color: var(--nav-bg-color);
     height: 35px;
     font-size: 14px;
     letter-spacing: 0.85px;
+    user-select: none;
+
+    @screen md {
+      display: flex;
+    }
 
     a {
       text-decoration: none;
