@@ -58,10 +58,9 @@ function centerTheTerminal() {
 
   if (terminal) {
     const terminalWidth = terminal.offsetWidth
-    const terminalHeight = terminal.offsetHeight
 
     left.value = (window.innerWidth - terminalWidth) / 2
-    top.value = (window.innerHeight - terminalHeight) / 2
+    top.value = (window.innerHeight - terminal.offsetHeight) / 2
     terminal.style.opacity = '1'
     terminal.style.transform = 'none'
   }
@@ -216,6 +215,8 @@ onMounted(() => {
 
 .terminal-body {
   padding: 25px;
+  max-height: 60vh;
+  overflow: auto;
 }
 </style>
 

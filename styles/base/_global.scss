@@ -19,6 +19,7 @@
       margin: 13px 0 8px;
       font-weight: 400;
       font-size: inherit;
+      color: var(--body-text-color) !important;
     }
   }
 
@@ -27,39 +28,39 @@
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   h3 {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   h5 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   h6 {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   p {
-    margin-bottom: 10px;
+    margin: 2px 0 6px;
+  }
 
-    &.note {
-      padding-left: 11px;
-      border-left: var(--primary-border);
-      border-left-width: 3px;
-    }
+  blockquote {
+    padding-left: 11px;
+    border-left: var(--primary-border);
+    border-left-width: 3px;
+    margin-bottom: 6px;
   }
 
   p,
   span,
-  li,
-  a {
-    opacity: 0.6;
+  li {
+    color: #666;
   }
 }

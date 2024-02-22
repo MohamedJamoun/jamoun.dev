@@ -1,0 +1,30 @@
+
+<script setup lang="ts">
+defineProps<{
+  skills: string[]
+}>()
+</script>
+
+<template>
+  <div class="skills">
+    <span v-for="(skill, i) in skills" :key="i" class="skill">
+      {{ skill }}
+    </span>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.skills {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 0;
+
+  .skill {
+    color: rgba(white, 0.7);
+    background-color: var(--secondary-gray);
+    font-size: 11px;
+    padding: 0px 6px;
+  }
+}
+</style>
