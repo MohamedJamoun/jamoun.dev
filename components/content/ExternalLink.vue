@@ -12,7 +12,7 @@ defineProps<{
     <a target="_blank" :href="link" class="external-link">
       {{ title }}
 
-      <PhArrowUpRight :size="16" weight="bold" class="icon" />
+      <PhArrowUpRight :size="12" weight="bold" class="icon" />
     </a>
   </div>
 </template>
@@ -23,20 +23,24 @@ defineProps<{
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 2px;
-  margin-bottom: 2px;
+  gap: 4px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    height: 1px;
+    width: 100%;
+    background-color: #01c5c7;
+  }
 
   &,
   :deep(*) {
-    color: var(--primary-color) !important;
+    color: #01c5c7 !important;
   }
 
   .icon {
-    margin-top: 1px;
-  }
-
-  &:hover {
-    text-decoration: underline;
+    margin-top: 3px;
   }
 }
 </style>

@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Sometype+Mono:wght@500;600;700&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap',
         },
       ],
       script: [
@@ -38,4 +38,7 @@ export default defineNuxtConfig({
     '@nuxthq/studio',
     '@nuxt/content',
   ],
+  devServer: {
+    host: process.env.NUXT_DAEMON_IP,
+  },
 })

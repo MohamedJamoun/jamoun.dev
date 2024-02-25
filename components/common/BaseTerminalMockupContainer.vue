@@ -105,7 +105,6 @@ onMounted(() => {
   margin: auto;
   background-color: var(--primary-gray);
   overflow: hidden;
-  opacity: 0;
   transition: transform 0.2s cubic-bezier(.22, .68, 0, 1), opacity 0.1s ease-in-out;
 
   @screen md {
@@ -116,6 +115,7 @@ onMounted(() => {
     position: fixed;
     z-index: 999999;
     transform: translateY(30px);
+    opacity: 0;
   }
 
   @screen lg {
@@ -162,17 +162,13 @@ onMounted(() => {
   }
 
   nav.navbar {
-    display: none;
     align-items: center;
     background-color: var(--nav-bg-color);
-    height: 35px;
+    height: var(--nav-height);
     font-size: 14px;
     letter-spacing: 0.85px;
     user-select: none;
-
-    @screen md {
-      display: flex;
-    }
+    display: flex;
 
     a {
       text-decoration: none;
@@ -214,9 +210,19 @@ onMounted(() => {
 }
 
 .terminal-body {
-  padding: 25px;
-  max-height: 60vh;
+  --space-y: 20px;
+  --space-x: 20px;
+  padding: var(--space-y) var(--space-x);
   overflow: auto;
+  max-height: calc(100vh - var(--nav-height) - var(--space-y));
+  width: 100vw;
+
+  @screen md {
+    --space-y: 25px;
+    --space-x: 25px;
+    max-height: 60vh;
+    width: auto;
+  }
 }
 </style>
 

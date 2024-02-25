@@ -16,9 +16,11 @@ defineProps<{
 <style lang="scss" scoped>
 .skills {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 5px;
   padding: 3px 0;
+  margin-top: 5px;
 
   .skill {
     color: rgba(white, 0.7);

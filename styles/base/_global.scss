@@ -1,8 +1,19 @@
+html,
+body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+sup {
+  top: 0;
+}
+
 .terminal-body {
 
   &,
   * {
-    color: var(--body-text-color);
+    color: var(--body-primary-text-color);
     font-size: 14px;
     font-family: var(--primary-font-family);
   }
@@ -17,9 +28,9 @@
     &,
     * {
       margin: 13px 0 8px;
-      font-weight: 400;
+      font-weight: 600;
       font-size: inherit;
-      color: var(--body-text-color) !important;
+      color: var(--body-primary-text-color) !important;
     }
   }
 
@@ -61,6 +72,6 @@
   p,
   span,
   li {
-    color: #666;
+    color: var(--body-secondary-text-color);
   }
 }
