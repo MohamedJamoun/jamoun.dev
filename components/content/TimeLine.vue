@@ -52,7 +52,7 @@ const timelineSpaceLeft = computed(() => {
         margin: 0;
         font-weight: 500;
         color: var(--primary-color) !important;
-        font-size: 12px
+        font-size: 14px
       }
     }
   }

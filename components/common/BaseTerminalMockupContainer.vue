@@ -1,24 +1,16 @@
 <script setup lang="ts">
 const navItems = [
   {
-    name: 'Home',
+    name: 'Me',
     path: '/',
   },
   {
-    name: 'About',
-    path: '/about',
+    name: 'Experience',
+    path: '/experience',
   },
   {
-    name: 'Projects',
-    path: '/projects',
-  },
-  {
-    name: 'Contact',
+    name: 'Let\'s Connect',
     path: '/contact',
-  },
-  {
-    name: 'Test',
-    path: '/test',
   },
 ]
 
@@ -171,17 +163,17 @@ onMounted(() => {
     display: flex;
 
     a {
+      white-space: nowrap;
       text-decoration: none;
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 0 20px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: var(--secondary-font-family);
       border-left: var(--primary-border);
 
       &:nth-child(1) {
-        padding-left: 25px;
         border-left: none;
       }
 
@@ -225,4 +217,3 @@ onMounted(() => {
   }
 }
 </style>
-

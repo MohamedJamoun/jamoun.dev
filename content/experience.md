@@ -2,19 +2,19 @@
 ## Freelancer on Upwork
 
 ::time-line{no-line}
-  ### Web designer <sup>Nov 2020</sup> 
+  ### Web designer <sup>- Nov 2020</sup> 
 
   Just graduated from school with some basic skills in the bag.
 
   :skills{:skills='["HTML", "CSS", "JS"]'}
 
-  ### Frontend <sup>Jan 2021</sup> 
+  ### Frontend <sup>- Jan 2021</sup> 
 
   Always hungry to learn more and find my way in the forest.
 
   :skills{:skills='["Vue.js", "Nuxt.js", "WebPack"]'}
 
-  ### Frontend expert <sup>Jul 2022</sup> 
+  ### Frontend expert <sup>- Jul 2022</sup> 
 
   More projects, More challenges, More experience.
 
@@ -23,11 +23,9 @@
 
 :spacer
 ## Software engineer at YouCan
-Dive deeper into the agile system, learning more about team management tools and concepts such as reviews, pull requests, dev meetings, sprints, Jira, Confluence, and everything else that comes with managing large software projects.
-
   ::time-line{no-line}
 
-  ### Frontend engineer <sup>Oct 2022</sup>
+  ### Frontend engineer <sup>- Oct 2022</sup>
 
   YouCan moved from old the storefront to new Shopify liquid themes.
 
@@ -69,7 +67,7 @@ Dive deeper into the agile system, learning more about team management tools and
   ::
 
   :spacer{}
-  ### Full-Stack engineer <sup>Dec 2022</sup>
+  ### Full-Stack engineer <sup>- Dec 2022</sup>
 
   Dive deeper into the agile system, learning more about team management tools and concepts such as reviews, pull requests, dev meetings, sprints, Jira, Confluence, and everything else that comes with managing large software projects.
 
@@ -84,7 +82,7 @@ Dive deeper into the agile system, learning more about team management tools and
 
   `JavaScript` `Vue.js` `PHP` `Laravel` `CSS` 
 
-  ### Lead engineer <sup>Jan 2024</sup>
+  ### Lead engineer <sup>- Jan 2024</sup>
 
   With deeper involvement with the Dev, design, and content teams, working with project managers, and attending several meetings, I learned the most essential skills that involve leading and managing teams.
 

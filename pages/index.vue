@@ -1,9 +1,16 @@
 <script setup lang="ts">
 
+onMounted(() => {
+  var animating = document.querySelectorAll('.highlighted.animating');
+
+  for (var i = 0; i < animating.length; i++) {
+    animating[i].classList.remove('animating');
+  }
+})
 </script>
 
 <template>
-  <div>
+  <div id="home">
     <ContentDoc />
   </div>
 </template>
@@ -12,11 +19,26 @@
 .terminal-body {
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
-}
 
-.me {
-  float: right;
-  shape-outside: url(me.png);
-  shape-margin: 10px;
+  #home {
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-top: 5px;
+
+      &,
+      * {
+        color: var(--primary-color) !important
+      }
+    }
+
+    .me {
+      float: right;
+      shape-outside: url('/me.png');
+      shape-margin: 20px;
+    }
+  }
 }
 </style>
