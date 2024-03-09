@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       script: [
         {
           src: 'https://unpkg.com/@phosphor-icons/web',
+          src: 'https://smtpjs.com/v3/smtp.js',
         },
       ],
     },
