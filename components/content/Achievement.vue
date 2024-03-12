@@ -1,8 +1,7 @@
 <script setup>
-import { PhCheck } from '@phosphor-icons/vue';
-
+import { PhCheck } from '@phosphor-icons/vue'
 </script>
-    
+
 <template>
   <div class="achievement">
     <div class="check-icon">
@@ -13,7 +12,6 @@ import { PhCheck } from '@phosphor-icons/vue';
     </div>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 .achievement {

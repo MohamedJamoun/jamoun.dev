@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PhArrowUpRight } from '@phosphor-icons/vue';
+import { PhArrowUpRight } from '@phosphor-icons/vue'
 
 defineProps<{
   link: string

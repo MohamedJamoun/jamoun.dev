@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
 onMounted(() => {
-  var animating = document.querySelectorAll('.highlighted.animating');
+  const animating = document.querySelectorAll('.highlighted.animating')
 
-  for (var i = 0; i < animating.length; i++) {
-    animating[i].classList.remove('animating');
-  }
+  for (let i = 0; i < animating.length; i++)
+    animating[i].classList.remove('animating')
 })
 </script>
 
@@ -38,6 +36,10 @@ onMounted(() => {
       float: right;
       shape-outside: url('/me.png');
       shape-margin: 20px;
+
+      p {
+        margin: 0;
+      }
     }
   }
 }

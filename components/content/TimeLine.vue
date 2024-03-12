@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const props = defineProps<{
   noLine: boolean
-}>();
+}>()
 
 const timelineSpaceLeft = computed(() => {
   return props.noLine ? '10px' : '15px'
-});
+})
 </script>
 
 <template>
   <div class="timeline">
-    <div class="left-border" v-if="!noLine"></div>
+    <div v-if="!noLine" class="left-border" />
     <slot />
   </div>
 </template>
@@ -105,4 +105,3 @@ const timelineSpaceLeft = computed(() => {
   }
 }
 </style>
- 

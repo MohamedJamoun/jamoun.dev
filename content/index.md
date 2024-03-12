@@ -8,17 +8,17 @@
 # Hi <span class='wave'>👋🏻</span>, I'm Mohamed Jamoun.
 ### Full Stack Developer
 
-:skills{:skills='["TypeScript", "Vue.js", "PHP", "Laravel"]'}
+:skills{:skills='["TypeScript!", "Vue.js!", "PHP", "Laravel"]'}
 
 :spacer{space='30'}
 
-A <mark data-delay="1">frontend aficionado</mark> who loves creating web interfaces that maximize performance across devices.
+A :highlight{text='frontend aficionado' delay='1'} who loves creating web interfaces that maximize performance across devices.
 :spacer{space='15'}
 
-Adept in TypeScript, Vue.js, PHP, and Laravel, With <br> <mark data-delay="3">4 years of frontend</mark> and <mark data-delay="4">2 years of backend</mark> experience.
+Adept in TypeScript, Vue.js, PHP, and Laravel, With <br> :highlight{text='4 years of frontend' delay='2'} and :highlight{text='2 years of backend' delay='3'} experience.
 :spacer{space='15'}
 
-Enthusiastic about <mark data-delay="5">freelance projects</mark>, committed to delivering <mark data-delay="6">high-quality results</mark>.
+Enthusiastic about :highlight{text='freelance projects' delay='4'}, committed to delivering :highlight{text='high-quality results' delay='5'}.
 :spacer{space='15'}
 
 Fitness enthusiast and dedicated developer who loves what he’s doing.

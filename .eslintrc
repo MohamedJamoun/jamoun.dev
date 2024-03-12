@@ -1,3 +1,27 @@
 {
-  "extends": "@antfu"
+  "extends": "@antfu",
+  "ignorePatterns": [
+    "**/*.scss",
+    "bun.lockb"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.vue"
+      ],
+      "rules": {
+        "vue/script-setup-uses-vars": "error",
+        "vue/order-in-components": [
+          "error",
+          {
+            "order": [
+              "script",
+              "template",
+              "style"
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

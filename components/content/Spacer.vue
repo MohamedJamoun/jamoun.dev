@@ -3,17 +3,15 @@ const props = withDefaults(defineProps<{
   x: boolean
   space: number | string
 }>(), {
-  space: 20
+  space: 20,
 })
 
 const spaceMOdel = computed(() => `${props.space}px`)
 </script>
 
 <template>
-  <div class="spacer">
-  </div>
+  <div class="spacer" />
 </template>
-
 
 <style lang="scss" scoped>
 .spacer {
