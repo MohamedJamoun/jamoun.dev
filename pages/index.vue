@@ -7,15 +7,13 @@ onMounted(() => {
 })
 
 async function sentMail() {
-  const res = await Email.send({
+  await Email.send({
     SecureToken: '330dac4b-2595-40b1-a55a-9afd5f74e414',
     To: 'mjamoun28@gmail.com',
     From: 'mjamoun28@gmail.com',
     Subject: 'This is the subject',
     Body: 'And this is the body',
   })
-
-  console.log(res)
 }
 </script>
 
