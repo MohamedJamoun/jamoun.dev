@@ -8,7 +8,7 @@ onMounted(() => {
 
 async function sentMail() {
   await Email.send({
-    SecureToken: '330dac4b-2595-40b1-a55a-9afd5f74e414',
+    SecureToken: '9efdf775-2990-43fc-a122-04fa4a1f68a2',
     To: 'mjamoun28@gmail.com',
     From: 'mjamoun28@gmail.com',
     Subject: 'This is the subject',
