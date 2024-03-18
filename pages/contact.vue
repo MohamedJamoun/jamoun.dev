@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
+import { PhArrowBendDownLeft } from '@phosphor-icons/vue'
 
 const steps = [
   {
@@ -77,6 +78,9 @@ onMounted(() => {
 
           <div class="value">
             <input :ref="inputRefs[step.index]" v-model="step.value.value" type="text">
+            <div class="icon">
+              <PhArrowBendDownLeft weight="bold" size="13" />
+            </div>
           </div>
         </form>
       </template>
@@ -176,8 +180,12 @@ footer {
         color: var(--primary-color);
       }
     }
+
     .value {
       padding: 0 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
 
       input {
         color: var(--body-secondary-text-color);
@@ -185,6 +193,29 @@ footer {
         width: 100%;
         padding: 5px 0;
         outline: none;
+      }
+
+      .icon {
+        --size: 20px;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--size);
+        min-height: var(--size);
+        max-height: var(--size);
+        width: var(--size);
+        max-width: var(--size);
+        min-width: var(--size);
+        border-radius: 50px;
+
+        @screen md {
+          display: none
+        }
+
+        :deep(*) {
+          color: var(--primary-gray) !important;
+        }
       }
     }
   }
