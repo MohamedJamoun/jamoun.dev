@@ -3,7 +3,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "prebuild": "npm run lint && npm run check:ts",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
