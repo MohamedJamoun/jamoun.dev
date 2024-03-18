@@ -52,7 +52,7 @@ function centerTheTerminal() {
     const terminalWidth = terminal.offsetWidth
 
     left.value = (window.innerWidth - terminalWidth) / 2
-    top.value = (window.innerHeight - terminal.offsetHeight) / 2
+    top.value = (window.innerHeight / 100) * 20
     terminal.style.opacity = '1'
     terminal.style.transform = 'none'
   }
@@ -97,10 +97,11 @@ onMounted(() => {
   margin: auto;
   background-color: var(--primary-gray);
   overflow: hidden;
-  transition: transform 0.2s cubic-bezier(.22, .68, 0, 1), opacity 0.1s ease-in-out;
+  transition: transform 0.1s cubic-bezier(.22, .68, 0, 1), opacity 0.3s ease-in-out;
 
   @screen md {
-    max-width: 90%;
+    width: 90%;
+    max-width: 800px;
     box-shadow: var(--primary-shadow);
     border-radius: 12px;
     border: var(--primary-border);
@@ -108,10 +109,6 @@ onMounted(() => {
     z-index: 999999;
     transform: translateY(30px);
     opacity: 0;
-  }
-
-  @screen lg {
-    max-width: 800px;
   }
 
   .top-bar {

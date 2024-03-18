@@ -7,13 +7,15 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "check:ts": "tsc --noEmit",
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/content": "^2.8.5",
-    "@phosphor-icons/vue": "^2.1.6"
+    "@phosphor-icons/vue": "^2.1.6",
+    "@vueuse/core": "^10.9.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.43.0-beta.0",

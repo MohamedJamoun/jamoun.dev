@@ -22,6 +22,25 @@
           }
         ]
       }
+    },
+    {
+      "files": [
+        "*.{js,ts,vue,json}"
+      ],
+      "rules": {
+        "semi": [
+          "error",
+          "never"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*"
+      ],
+      "rules": {
+        "eol-last": "error"
+      }
     }
   ]
 }
