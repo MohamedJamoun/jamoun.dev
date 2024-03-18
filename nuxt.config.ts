@@ -8,15 +8,12 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Sometype+Mono:wght@500;600;700&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Source+Code+Pro&display=swap',
         },
       ],
       script: [
         {
           src: 'https://unpkg.com/@phosphor-icons/web',
-        },
-        {
-          src: 'https://smtpjs.com/v3/smtp.js',
         },
       ],
     },

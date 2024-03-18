@@ -5,25 +5,11 @@ onMounted(() => {
   for (let i = 0; i < animating.length; i++)
     animating[i].classList.remove('animating')
 })
-
-async function sentMail() {
-  await Email.send({
-    SecureToken: '951fdc57-ed3e-4a66-8fc6-8d5162731700',
-    To: 'mjamoun28@gmail.com',
-    From: 'mjamoun28@gmail.com',
-    Subject: 'This is the subject',
-    Body: 'And this is the body',
-  })
-}
 </script>
 
 <template>
   <div id="home">
     <ContentDoc />
-
-    <button @click="sentMail">
-      send an email now
-    </button>
   </div>
 </template>
 
