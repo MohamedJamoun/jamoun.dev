@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Source+Code+Pro&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&family=Montserrat:wght@500&display=swap',
         },
       ],
       script: [

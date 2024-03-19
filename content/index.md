@@ -6,7 +6,7 @@
 </div> 
 
 # Hi <span class='wave'>👋🏻</span>, I'm Mohamed Jamoun.
-### Full Stack Developer
+### Senior Frontend Developer
 
 :skills{:skills='["TypeScript!", "Vue.js!", "PHP", "Laravel"]'}
 
@@ -20,5 +20,3 @@ Adept in TypeScript, Vue.js, PHP, and Laravel, With <br> :highlight{text='4 year
 
 Enthusiastic about :highlight{text='freelance projects' delay='4'}, committed to delivering :highlight{text='high-quality results' delay='5'}.
 :spacer{space='15'}
-
-Fitness enthusiast and dedicated developer who loves what he’s doing.
