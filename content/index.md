@@ -2,7 +2,8 @@
 
 <div class="me">
 
-![Me](me.png)
+<img src="me.png" />
+
 </div> 
 
 # Hi <span class='wave'>👋🏻</span>, I'm Mohamed Jamoun.
