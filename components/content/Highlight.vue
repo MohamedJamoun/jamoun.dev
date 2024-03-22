@@ -17,6 +17,9 @@ defineProps<{
 @use 'sass:math';
 
 .highlight {
+  &, * {
+    white-space: nowrap;
+  }
   position: relative;
 
   .double-highlight {
