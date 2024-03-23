@@ -72,7 +72,9 @@ sup {
   p,
   span,
   li,
-  mark {
+  mark,
+  sup {
     color: var(--body-secondary-text-color);
+    font-weight: 400 !important;
   }
 }

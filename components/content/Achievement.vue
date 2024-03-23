@@ -37,7 +37,8 @@ import { PhCheck } from '@phosphor-icons/vue'
   .label {
     :deep(p) {
       margin: 0;
-      color: white;
+      color: var(--body-secondary-text-color);
+      font-size: 13px !important;
     }
   }
 }

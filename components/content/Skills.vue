@@ -17,7 +17,7 @@ defineProps<{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   padding: 3px 0;
   margin-top: 5px;
 
@@ -25,10 +25,11 @@ defineProps<{
     color: rgba(white, 0.7);
     background-color: var(--secondary-gray);
     font-size: 11px;
-    padding: 0px 6px;
+    font-weight: 700 !important;
+    padding: 0px 5px;
 
     &.primary-skill {
-      background-color: white;
+      background-color: var(--primary-color);
       color: var(--primary-gray);
     }
   }

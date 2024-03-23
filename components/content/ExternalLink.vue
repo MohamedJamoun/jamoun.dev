@@ -12,7 +12,7 @@ defineProps<{
     <a target="_blank" :href="link" class="external-link">
       {{ title }}
 
-      <PhArrowUpRight :size="12" weight="bold" class="icon" />
+      <PhArrowUpRight size="14" weight="bold" class="icon" />
     </a>
   </div>
 </template>

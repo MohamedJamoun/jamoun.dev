@@ -32,7 +32,7 @@ const timelineSpaceLeft = computed(() => {
     left: 0;
     top: 16px;
     height: calc(100% - 16px);
-    width: 1px;
+    width: 2px;
     background-color: var(--secondary-gray);
   }
 
@@ -48,11 +48,17 @@ const timelineSpaceLeft = computed(() => {
     }
 
     a {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+      margin-top: 0;
+
       sup {
         margin: 0;
         font-weight: 500;
         color: var(--primary-color) !important;
-        font-size: 14px
+        font-size: 14px;
       }
     }
   }
@@ -66,41 +72,47 @@ const timelineSpaceLeft = computed(() => {
     }
 
     &::after {
-      --height: 10px;
-      top: calc(50% - calc(var(--height) / 2));
-      left: -19px;
-      height: var(--height);
-      width: 10px;
+      --size: 7px;
+      top: calc(50% - calc(var(--size) / 2));
+      left: -18px;
+      height: var(--size);
+      width: var(--size);
       border-radius: 50px;
       background-color: var(--primary-color);
     }
 
     &::before {
-      --height: 32px;
-      top: calc(50% - calc(var(--height) / 2));
+      --size: 32px;
+      top: calc(50% - calc(var(--size) / 2));
       left: -19px;
-      height: var(--height);
+      height: var(--size);
       width: 10px;
       background-color: var(--primary-gray);
     }
   }
 
   :deep(h2) {
+    font-size: 18px;
     position: sticky !important;
     background-color: var(--primary-gray);
     top: 0;
     z-index: 9;
+    transform: translateY(-1px);
     margin-top: 0;
     box-shadow: -14px 1px 0px var(--primary-gray), -20px 0px 0px var(--primary-gray), -14px 5px 0px var(--primary-gray);
   }
 
   :deep(h3) {
+    font-size: 15px;
+
     &::before {
-      top: 50%;
-      left: -24px;
-      height: 1px;
-      width: 15px;
+      top: calc(50% - 8px);
+      left: -27px;
+      height: 7px;
+      width: 7px;
       background-color: var(--secondary-gray);
+      outline: 4px solid var(--primary-gray);
+      border-radius: 50px;
     }
   }
 }
