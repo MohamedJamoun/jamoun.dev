@@ -35,10 +35,12 @@ onMounted(() => {
     .me {
 
       img {
-        float: right;
-        shape-outside: url('/me.png');
-        shape-margin: 20px;
-        max-width: 330px;
+        @screen md {
+          float: right;
+          shape-outside: url('/me.png');
+          shape-margin: 20px;
+          max-width: 330px;
+        }
       }
 
       p {
