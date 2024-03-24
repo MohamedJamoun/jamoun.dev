@@ -203,10 +203,11 @@ onMounted(() => {
   --space-x: 20px;
   padding: var(--space-y) var(--space-x);
   overflow: auto;
-  max-height: calc(100vh - var(--nav-height) - var(--space-y));
   width: 100vw;
+  max-height: calc(100vh - var(--nav-height));
 
   @screen md {
+    max-height: calc(100vh - var(--nav-height) - var(--space-y));
     --space-y: 25px;
     --space-x: 25px;
     max-height: 60vh;
