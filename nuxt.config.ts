@@ -18,6 +18,13 @@ export default defineNuxtConfig({
       ],
     },
   },
+  plugins: [
+    {
+      src: '~/plugins/microsoft-clarity.js',
+      ssr: false,
+      mode: 'client',
+    },
+  ],
   components: {
     global: true,
     dirs: [
