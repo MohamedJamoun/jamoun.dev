@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { nextTick, ref } from 'vue'
 import { PhArrowBendDownLeft } from '@phosphor-icons/vue'
+import { nextTick, ref } from 'vue'
 
 const steps = [
   {
@@ -12,6 +12,25 @@ const steps = [
     label: 'Anything you\'d like to share with me?',
     index: 1,
     value: ref(''),
+  },
+]
+
+const contacts = [
+  {
+    label: 'GitHub',
+    href: 'https://github.com/MohamedJamoun',
+  },
+  {
+    label: 'Upwork',
+    href: 'https://www.upwork.com/freelancers/~01b378692ef9e2bee8',
+  },
+  {
+    label: 'Linkedin',
+    href: 'https://www.linkedin.com/in/mohamed-jamoun',
+  },
+  {
+    label: 'mjamoun28@gmail.com',
+    href: 'mailto:mjamoun28@gmail.com',
   },
 ]
 
@@ -78,7 +97,7 @@ onMounted(() => {
 
           <div class="value">
             <input :ref="inputRefs[step.index]" v-model="step.value.value" type="text">
-            <div class="icon">
+            <div class="icon" @click="nextStep">
               <PhArrowBendDownLeft weight="bold" size="13" />
             </div>
           </div>
@@ -96,14 +115,21 @@ onMounted(() => {
         </div>
       </div>
 
-      <a href="mailto:mjamoun28@gmail.com" class="contact-info">
-        <div class="emoji">
-          👉🏻
-        </div>
-        <div class="contact">
-          mjamoun28@gmail.com
-        </div>
-      </a>
+      <div class="contacts">
+        <a
+          v-for="(contact, i) in contacts"
+          :key="i"
+          :href="contact.href"
+          class="contact-info"
+        >
+          <!-- <div class="emoji">
+            👉🏻
+          </div> -->
+          <div class="contact">
+            {{ contact.label }}
+          </div>
+        </a>
+      </div>
     </footer>
   </div>
 </template>
@@ -115,32 +141,68 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .terminal-body {
+    min-height: 100vh;
+
+    @screen md {
+      min-height: unset;
+    }
+  }
 }
 
 footer {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: space-between;
   margin-top: 50px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+
+  @screen md {
+    flex-direction: row;
+    position: unset;
+    bottom: unset;
+    right: unset;
+  }
 
   .alerts {
     font-size: 14px;
+
+    @screen md {
+      display: flex;
+      align-items: flex-end;
+    }
+
     p {
       color: white !important;
     }
   }
 
-  .contact-info {
+  .contacts {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
     gap: 8px;
 
-    .emoji {
-      font-size: 16px;
-    }
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 1px 10px;
+      border: 1px solid var(--primary-color);
 
-    .contact {
-      font-size: 14px;
-      color: var(--primary-color)
+      .emoji {
+        font-size: 16px;
+      }
+
+      .contact {
+        font-size: 14px;
+        color: var(--primary-color)
+      }
     }
   }
 }
@@ -193,6 +255,7 @@ footer {
         width: 100%;
         padding: 5px 0;
         outline: none;
+        font-size: 16px;
       }
 
       .icon {
