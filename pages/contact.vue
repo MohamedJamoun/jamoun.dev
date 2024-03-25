@@ -153,13 +153,17 @@ onMounted(() => {
 
 footer {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: space-between;
   margin-top: 50px;
   position: fixed;
   bottom: 20px;
   right: 20px;
+  left: 20px;
 
   @screen md {
+    flex-direction: row;
     position: unset;
     bottom: unset;
     right: unset;
@@ -167,6 +171,12 @@ footer {
 
   .alerts {
     font-size: 14px;
+
+    @screen md {
+      display: flex;
+      align-items: flex-end;
+    }
+
     p {
       color: white !important;
     }
