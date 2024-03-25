@@ -98,8 +98,10 @@ onMounted(() => {
   background-color: var(--primary-gray);
   overflow: hidden;
   transition: transform 0.1s cubic-bezier(.22, .68, 0, 1), opacity 0.3s ease-in-out;
+  padding-top: calc(var(--nav-height) * 1.4);
 
   @screen md {
+    padding-top: 0;
     width: 90%;
     max-width: 800px;
     box-shadow: var(--primary-shadow);
@@ -151,15 +153,33 @@ onMounted(() => {
   }
 
   nav.navbar {
+    display: flex;
     align-items: center;
     background-color: var(--nav-bg-color);
+    backdrop-filter: blur(20px);
     height: var(--nav-height);
     font-size: 14px;
     letter-spacing: 0.85px;
     user-select: none;
-    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    margin: 10px;
+    width: calc(100% - 20px);
+    border-radius: 80px;
+    overflow: hidden;
+    border: var(--primary-border);
+
+    @screen md {
+      position: unset;
+      width: unset;
+      border-radius: unset;
+      border: unset;
+      margin: unset;
+    }
 
     a {
+      flex: 1;
       white-space: nowrap;
       text-decoration: none;
       color: white;
@@ -176,11 +196,15 @@ onMounted(() => {
 
       &:hover,
       &.router-link-active {
-        border-bottom-color: var(--primary-gray);
-        background-color: var(--primary-gray);
+        background-color: rgba(black, .6);
 
-        &:last-of-type {
-          border-right: var(--primary-border);
+        @screen md {
+          background-color: var(--primary-gray);
+          border-bottom-color: var(--primary-gray);
+
+          &:last-of-type {
+            border-right: var(--primary-border);
+          }
         }
       }
     }
@@ -188,12 +212,19 @@ onMounted(() => {
     a,
     .missed {
       height: 100%;
-      border-bottom: 1px solid rgba(white, 0.08);
-      border-top: var(--primary-border);
+      @screen md {
+        border-bottom: 1px solid rgba(white, 0.08);
+        border-top: var(--primary-border);
+      }
     }
 
     .missed {
       width: 100%;
+      display: none;
+
+      @screen md {
+        display: unset;
+      }
     }
   }
 }
@@ -202,11 +233,10 @@ onMounted(() => {
   --space-y: 20px;
   --space-x: 20px;
   padding: var(--space-y) var(--space-x);
-  overflow: auto;
   width: 100vw;
-  max-height: calc(100vh - var(--nav-height));
 
   @screen md {
+    overflow: auto;
     max-height: calc(100vh - var(--nav-height) - var(--space-y));
     --space-y: 25px;
     --space-x: 25px;

@@ -1,8 +1,11 @@
 html,
 body {
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  @screen md {
+    padding-top: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 sup {
@@ -27,6 +30,7 @@ sup {
 
     &,
     * {
+      line-height: 1;
       margin: 13px 0 8px;
       font-weight: 600;
       font-size: inherit;

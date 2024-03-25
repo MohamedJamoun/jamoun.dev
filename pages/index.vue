@@ -19,12 +19,8 @@ onMounted(() => {
   margin-bottom: 0 !important;
 
   #home {
-    h1 {
-      margin-bottom: 0;
-    }
-
     h3 {
-      margin-top: 5px;
+      margin: 10px 0 15px;
 
       &,
       * {
