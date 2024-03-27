@@ -114,28 +114,28 @@ onMounted(() => {
   }
 
   .top-bar {
-    width: 100%;
-    height: 30px;
+    background-color: var(--primary-gray);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: var(--primary-gray);
     display: none;
+    height: 45px;
+    width: 100%;
 
     @screen md {
       display: block;
     }
 
     .top-bar-buttons {
-      display: flex;
       align-items: center;
-      gap: 9px;
+      display: flex;
+      gap: 8px;
       height: 100%;
-      padding: 0 10px;
+      padding: 0 17px;
 
       .top-bar-button {
-        width: 14px;
-        height: 14px;
         border-radius: 50%;
+        height: 13px;
+        width: 13px;
       }
 
       .top-bar-button-red {

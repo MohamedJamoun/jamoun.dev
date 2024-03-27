@@ -192,8 +192,9 @@ footer {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 1px 10px;
+      padding: 1px 8px;
       border: 1px solid var(--primary-color);
+      border-radius: 4px;
 
       .emoji {
         font-size: 16px;

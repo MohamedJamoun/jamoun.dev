@@ -8,6 +8,20 @@ body {
   }
 }
 
+@screen md {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary-gray);
+  }
+}
+
 sup {
   top: 0;
 }

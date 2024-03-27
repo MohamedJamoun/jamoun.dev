@@ -26,10 +26,11 @@ defineProps<{
     background-color: var(--secondary-gray);
     font-size: 11px;
     font-weight: 700 !important;
-    padding: 0px 5px;
+    padding: 0px 6px;
+    border-radius: 2px;
 
     &.primary-skill {
-      background-color: var(--primary-color);
+      background-color: white;
       color: var(--primary-gray);
     }
   }
