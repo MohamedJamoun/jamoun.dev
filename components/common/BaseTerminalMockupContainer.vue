@@ -71,32 +71,36 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="terminal" class="terminal-mockup-container" :style="{ left: `${left}px`, top: `${top}px` }">
-    <div class="top-bar" @mousedown="startDragging">
-      <div class="top-bar-buttons">
-        <div class="top-bar-button top-bar-button-red" />
-        <div class="top-bar-button top-bar-button-yellow" />
-        <div class="top-bar-button top-bar-button-green" />
+  <div id="terminal" class="terminal-wrapper" :style="{ left: `${left}px`, top: `${top}px` }">
+    <today-tip />
+
+    <div class="terminal-mockup-container">
+      <div class="top-bar" @mousedown="startDragging">
+        <div class="top-bar-buttons">
+          <div class="top-bar-button top-bar-button-red" />
+          <div class="top-bar-button top-bar-button-yellow" />
+          <div class="top-bar-button top-bar-button-green" />
+        </div>
       </div>
+
+      <nav class="navbar">
+        <NuxtLink v-for="item in navItems" :key="item.name" :to="item.path">
+          {{ item.name }}
+        </NuxtLink>
+        <div class="missed" />
+      </nav>
+      <main class="terminal-body">
+        <slot />
+      </main>
     </div>
-    <nav class="navbar">
-      <NuxtLink v-for="item in navItems" :key="item.name" :to="item.path">
-        {{ item.name }}
-      </NuxtLink>
-      <div class="missed" />
-    </nav>
-    <main class="terminal-body">
-      <slot />
-    </main>
   </div>
 </template>
 
 <style scoped lang="scss">
-.terminal-mockup-container {
+.terminal-wrapper {
+  position: relative;
   width: 100%;
   margin: auto;
-  background-color: var(--primary-gray);
-  overflow: hidden;
   transition: transform 0.1s cubic-bezier(.22, .68, 0, 1), opacity 0.3s ease-in-out;
   padding-top: calc(var(--nav-height) * 1.4);
 
@@ -104,144 +108,153 @@ onMounted(() => {
     padding-top: 0;
     width: 90%;
     max-width: 800px;
-    box-shadow: var(--primary-shadow);
-    border-radius: 12px;
-    border: var(--primary-border);
     position: fixed;
     z-index: 999999;
     transform: translateY(30px);
     opacity: 0;
   }
 
-  .top-bar {
+  .terminal-mockup-container {
     width: 100%;
-    height: 30px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    height: 100%;
     background-color: var(--primary-gray);
-    display: none;
 
     @screen md {
-      display: block;
+      border-radius: 12px;
+      box-shadow: var(--primary-shadow);
+      border: var(--primary-border);
     }
 
-    .top-bar-buttons {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      height: 100%;
-      padding: 0 10px;
+    .top-bar {
+      width: 100%;
+      height: 45px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-color: var(--primary-gray);
+      display: none;
 
-      .top-bar-button {
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
+      @screen md {
+        display: block;
       }
 
-      .top-bar-button-red {
-        background-color: var(--red);
-      }
+      .top-bar-buttons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 100%;
+        padding: 0 17px;
 
-      .top-bar-button-yellow {
-        background-color: var(--yellow);
-      }
+        .top-bar-button {
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+        }
 
-      .top-bar-button-green {
-        background-color: var(--green);
-      }
-    }
-  }
+        .top-bar-button-red {
+          background-color: var(--red);
+        }
 
-  nav.navbar {
-    display: flex;
-    align-items: center;
-    background-color: var(--nav-bg-color);
-    backdrop-filter: blur(20px);
-    height: var(--nav-height);
-    font-size: 14px;
-    letter-spacing: 0.85px;
-    user-select: none;
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    margin: 10px;
-    width: calc(100% - 20px);
-    border-radius: 80px;
-    overflow: hidden;
-    border: var(--primary-border);
+        .top-bar-button-yellow {
+          background-color: var(--yellow);
+        }
 
-    @screen md {
-      position: unset;
-      width: unset;
-      border-radius: unset;
-      border: unset;
-      margin: unset;
-    }
-
-    a {
-      flex: 1;
-      white-space: nowrap;
-      text-decoration: none;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 20px;
-      font-family: var(--secondary-font-family);
-      border-left: var(--primary-border);
-
-      &:nth-child(1) {
-        border-left: none;
-      }
-
-      &:hover,
-      &.router-link-active {
-        background-color: rgba(black, .6);
-
-        @screen md {
-          background-color: var(--primary-gray);
-          border-bottom-color: var(--primary-gray);
-
-          &:last-of-type {
-            border-right: var(--primary-border);
-          }
+        .top-bar-button-green {
+          background-color: var(--green);
         }
       }
     }
 
-    a,
-    .missed {
-      height: 100%;
+    nav.navbar {
+      display: flex;
+      align-items: center;
+      background-color: var(--nav-bg-color);
+      backdrop-filter: blur(20px);
+      height: var(--nav-height);
+      font-size: 14px;
+      letter-spacing: 0.85px;
+      user-select: none;
+      position: fixed;
+      top: 0;
+      z-index: 9999;
+      margin: 10px;
+      width: calc(100% - 20px);
+      border-radius: 80px;
+      overflow: hidden;
+      border: var(--primary-border);
+
       @screen md {
-        border-bottom: 1px solid rgba(white, 0.08);
-        border-top: var(--primary-border);
+        position: unset;
+        width: unset;
+        border-radius: unset;
+        border: unset;
+        margin: unset;
       }
-    }
 
-    .missed {
-      width: 100%;
-      display: none;
+      a {
+        flex: 1;
+        white-space: nowrap;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        font-family: var(--secondary-font-family);
+        border-left: var(--primary-border);
 
-      @screen md {
-        display: unset;
+        &:nth-child(1) {
+          border-left: none;
+        }
+
+        &:hover,
+        &.router-link-active {
+          background-color: rgba(black, .6);
+
+          @screen md {
+            background-color: var(--primary-gray);
+            border-bottom-color: var(--primary-gray);
+
+            &:last-of-type {
+              border-right: var(--primary-border);
+            }
+          }
+        }
+      }
+
+      a,
+      .missed {
+        height: 100%;
+        @screen md {
+          border-bottom: 1px solid rgba(white, 0.08);
+          border-top: var(--primary-border);
+        }
+      }
+
+      .missed {
+        width: 100%;
+        display: none;
+
+        @screen md {
+          display: unset;
+        }
       }
     }
   }
-}
 
-.terminal-body {
-  --space-y: 20px;
-  --space-x: 20px;
-  padding: var(--space-y) var(--space-x);
-  width: 100vw;
+  .terminal-body {
+    --space-y: 20px;
+    --space-x: 20px;
+    padding: var(--space-y) var(--space-x);
+    width: 100vw;
 
-  @screen md {
-    overflow: auto;
-    max-height: calc(100vh - var(--nav-height) - var(--space-y));
-    --space-y: 25px;
-    --space-x: 25px;
-    max-height: 60vh;
-    width: auto;
+    @screen md {
+      overflow: auto;
+      max-height: calc(100vh - var(--nav-height) - var(--space-y));
+      --space-y: 25px;
+      --space-x: 25px;
+      max-height: 60vh;
+      width: auto;
+    }
   }
 }
 </style>
