@@ -72,7 +72,7 @@ onMounted(() => {
 
 <template>
   <div id="terminal" class="terminal-wrapper" :style="{ left: `${left}px`, top: `${top}px` }">
-    <today-tip />
+    <!-- <today-tip /> -->
 
     <div class="terminal-mockup-container">
       <div class="top-bar" @mousedown="startDragging">
