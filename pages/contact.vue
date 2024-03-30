@@ -4,12 +4,14 @@ import { nextTick, ref } from 'vue'
 
 const steps = [
   {
-    label: 'Can you please share your contact info (email, phone, link...)',
+    label: 'Can you please share your contact info',
+    placeholder: 'Email, phone, link...',
     index: 0,
     value: ref(''),
   },
   {
     label: 'Anything you\'d like to share with me?',
+    placeholder: 'Type your message...',
     index: 1,
     value: ref(''),
   },
@@ -96,7 +98,8 @@ onMounted(() => {
           </div>
 
           <div class="value">
-            <input :ref="inputRefs[step.index]" v-model="step.value.value" type="text">
+            <input :ref="inputRefs[step.index]" v-model="step.value.value" :placeholder="step.placeholder" type="text">
+
             <div class="icon" @click="nextStep">
               <PhArrowBendDownLeft weight="bold" size="13" />
             </div>

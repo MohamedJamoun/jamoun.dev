@@ -8,6 +8,10 @@ body {
   }
 }
 
+input::placeholder {
+  color: var(--secondary-gray);
+}
+
 @screen md {
   ::-webkit-scrollbar {
     width: 5px;
