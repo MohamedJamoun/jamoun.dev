@@ -17,7 +17,7 @@
     ::
 
     :spacer
-    :external-link{title='YouCan Confirm' link='https://github.com/youcan-shop/cod-theme'}
+    :external-link{title='YouCan Confirm' link='https://confirm.youcan.shop/en'}
     ::achievement
       Frontend team leader and the project starter
     ::
@@ -86,18 +86,20 @@
   ## Freelancer on Upwork
   ::time-line{no-line}
     ### Frontend expert <sup>Jul 2022</sup> 
-    More projects, More challenges, More experience.
-    :skills{:skills='["!TypeScript", "Vue.js", "!Nuxt.js", "Vite", "Vuetify", "Tailwind"]'}
-    :spacer
-
-    ### Frontend <sup>Jan 2021</sup> 
-    Always hungry to learn more and find my way in the forest.
-    :skills{:skills='["Vue.js", "!Nuxt.js", "WebPack"]'}
+    :external-link{title='testapp.io' link='https://testapp.io'}
+    :skills{:skills='["!JavaScript", "!Vue.js"]'}
+    :spacer{space=8}
+    ::achievement
+      Refactor legacy dashboard code and eliminate unused code, packages, and libraries, resulting in a faster and lighter dashboard.
+    ::
+    ::achievement
+      Redesign the dashboard with a new refined & fresh design.
+    ::
     :spacer
 
     ### Web designer <sup>Mars 2020</sup> 
-    Just graduated from school with some basic skills in the bag.
-    :skills{:skills='["HTML", "CSS", "!JavaScript"]'}
+    :external-link{title='kreuzbergkinder.com' link='https://kreuzbergkinder.com'}
+    :skills{:skills='["!JavaScript", "!Vue.js"]'}
   ::
 
   :spacer{space=20}
