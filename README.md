@@ -4,6 +4,11 @@
 
 [jamoun.me](https://www.jamoun.me)
 
+## Requirments
+
+- node.js >= 18.12.1
+- npm >= 8.19.2
+
 ## Setup
 
 Make sure to install the dependencies:
