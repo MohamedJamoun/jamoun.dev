@@ -13,18 +13,19 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "^2.8.5",
     "@phosphor-icons/vue": "^2.1.6",
     "@vueuse/core": "^10.9.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.43.0-beta.0",
+    "@nuxt/content": "^2.10.0",
     "@nuxt/devtools": "latest",
-    "@nuxthq/studio": "^1.0.2",
+    "@nuxthq/studio": "^1.0.6",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.49.0",
     "eslint-plugin-import": "^2.29.1",
     "lint-staged": "^14.0.1",
-    "nuxt": "^3.7.3",
+    "nuxt": "^3.9.1",
     "postcss": "^8.4.31",
     "sass": "^1.69.3",
     "simple-git-hooks": "^2.9.0",
@@ -35,6 +36,6 @@
     "pre-commit": "bun lint-staged"
   },
   "lint-staged": {
-    "*": "eslint . --fix"
+    "*": "eslint --fix"
   }
 }
