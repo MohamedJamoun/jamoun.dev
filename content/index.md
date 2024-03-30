@@ -1,15 +1,23 @@
-# Hi, I'm Mohamed Jamoun.
 
-front Laravel/vue engineer.  
-Frontend expert, I :love: working with Vue.js and Nuxt.js frameworks.
 
-Lorem salam dolor sit amet consectetur adipisicing elit. Nulla ad quo, id quas totam iusto corrupti laudantium vitae alias nemo doloremque laborum ratione quod amet non perferendis assumenda. Enim, ab.
+<div class="me">
 
-# About Me
-<div class="grid grid-cols-2 grid-rows-1 gap-6">
-    <div>1</div>
-    <div>
-      
-    </div>
-</div>
-    
+<img src="me.png" />
+
+</div> 
+
+# Hi <span class='wave'>👋🏻</span>, I'm Mohamed Jamoun.
+### Senior Frontend Developer
+
+:skills{:skills='["TypeScript!", "Vue.js!", "PHP", "Laravel"]'}
+
+:spacer{space='30'}
+
+A :highlight{text='senior frontend developer' delay='1'} who loves creating web interfaces that maximize performance across devices.
+:spacer{space='15'}
+
+Adept in TypeScript, Vue.js, PHP, and Laravel, With :highlight{text='4 years of frontend' delay='2'} and :highlight{text='2 years of backend' delay='3'} experience.
+:spacer{space='15'}
+
+Enthusiastic about :highlight{text='projects' delay='4'} and :highlight{text='opportunities' delay='5'}, committed to delivering :highlight{text='high-quality results' delay='6'}.
+:spacer{space='15'}

@@ -1,31 +1,52 @@
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import process from 'node:process'
+
 export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
-    head:{
+    head: {
       link: [
-        { 
+        {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Sometype+Mono:wght@500;600;700&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&family=Montserrat:wght@500&display=swap',
+        },
+      ],
+      script: [
+        {
+          src: 'https://unpkg.com/@phosphor-icons/web',
         },
       ],
     },
   },
-  components: [
-    { path: '~/components/common' },
-    { path: '~/components/hallows' },
-    { path: '~/components/utils' },
+  plugins: [
+    {
+      src: '~/plugins/microsoft-clarity.js',
+      ssr: false,
+      mode: 'client',
+    },
   ],
+  components: {
+    global: true,
+    dirs: [
+      '~/components/common',
+      '~/components/hallows',
+      '~/components/utils',
+    ],
+  },
   css: ['~/styles/utils/tailwind.css', '~/styles/main.scss'],
   postcss: {
     plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
+      'postcss-import': {},
+      'tailwindcss/nesting': {},
+      'tailwindcss': {},
+      'autoprefixer': {},
     },
   },
   modules: [
     '@nuxthq/studio',
     '@nuxt/content',
   ],
+  devServer: {
+    host: process.env.NUXT_DAEMON_IP,
+  },
 })
