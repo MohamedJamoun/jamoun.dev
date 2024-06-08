@@ -9,7 +9,7 @@
 # Hi <span class='wave'>👋🏻</span>, I'm Mohamed Jamoun.
 ### Senior Frontend Developer
 
-:skills{:skills='["TypeScript!", "Vue.js!", "PHP", "Laravel"]'}
+:skills{:skills='["TypeScript!", "Vue.js!", "Nuxt.js!"]'}
 
 :spacer{space='30'}
 
